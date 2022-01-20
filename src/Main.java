@@ -14,8 +14,9 @@ public class Main {
         float doorWidth;
         float windowHeight;
         float windowWidth;
-        float numberOfCoats;
+        int numberOfCoats =0;
         float costOfPaintPerLitre;
+        String tooManyCoats = (numberOfCoats<3) ? "Too many coats":"Thats Good";
 
         float squareFeetPerLitre = 20;
 
@@ -25,55 +26,64 @@ public class Main {
         System.out.println("The Height of the wall ");
         roomHeightWall1 = scanner.nextFloat();
 
-        System.out.println("The Width of the wall ");
-        roomWidthWall1 = scanner.nextFloat();
-
-        double totalAreaOfWalls = (roomWidthWall1 * roomHeightWall1) ;
-
-
-        System.out.println("The Width of the ceiling ");
-        ceilingWidth = scanner.nextFloat();
-
-        System.out.println("The height of the ceiling ");
-        ceilingHeight = scanner.nextFloat();
-
-        double totalAreaOfCeiling = (ceilingHeight * ceilingWidth);
-
-        System.out.println("The height of the door ");
-        doorHeight = scanner.nextFloat();
-
-        System.out.println("The Width of the door ");
-        doorWidth = scanner.nextFloat();
-
-        double totalAreaOfDoor = (doorHeight * doorWidth);
-
-        System.out.println("The height of the window ");
-        windowHeight = scanner.nextFloat();
-
-        System.out.println("The Width of the window ");
-        windowWidth = scanner.nextFloat();
-
-        double totalAreaOfWindow = (windowHeight * windowWidth);
-
-        System.out.println("number coats you want to apply ");
-        numberOfCoats = scanner.nextFloat();
-
-        double areaOfEverything = ((totalAreaOfDoor+totalAreaOfWindow)-(totalAreaOfWalls + totalAreaOfCeiling));
-
-        System.out.println(areaOfEverything);
+        if (roomHeightWall1>20){
+            System.out.println("Be realistic");
+        } else {
 
 
-        /*float wall1SurfaceArea = (roomHeightWall1 * roomWidthWall1);
-        float ceilingSurfaceArea = (ceilingHeight * ceilingWidth);
-        float doorSurfaceArea = (doorHeight * doorWidth);
-        float windowSurfaceArea = (windowHeight * windowWidth);
-        float surfaceAreaOfAllWallsAndCeiling = wall1SurfaceArea +ceilingSurfaceArea;
-        float areaThatIsDeducted = (doorSurfaceArea + windowSurfaceArea);
-        float finalSurfaceArea = (surfaceAreaOfAllWallsAndCeiling - areaThatIsDeducted);
-        float finalAreaNeeded = (finalSurfaceArea * numberOfCoats);
-        float resultForAreaDivBySquareFeet = (finalAreaNeeded / squareFeetPerLitre / 10);
-        float roundedUp = (Math.round(resultForAreaDivBySquareFeet));
-       */ //  float costResult = (roundedUp * costOfPaintPerLitre);
+            System.out.println("The Width of the wall ");
+            roomWidthWall1 = scanner.nextFloat();
+
+            double totalAreaOfWalls = (roomWidthWall1 * roomHeightWall1);
+
+            System.out.println("The Width of the ceiling ");
+            ceilingWidth = scanner.nextFloat();
+
+            System.out.println("The height of the ceiling ");
+            ceilingHeight = scanner.nextFloat();
+
+            double totalAreaOfCeiling = (ceilingHeight * ceilingWidth);
+
+            System.out.println("The height of the door ");
+            doorHeight = scanner.nextFloat();
+
+            System.out.println("The Width of the door ");
+            doorWidth = scanner.nextFloat();
+
+            double totalAreaOfDoor = (doorHeight * doorWidth);
+
+            System.out.println("The height of the window ");
+            windowHeight = scanner.nextFloat();
+
+            System.out.println("The Width of the window ");
+            windowWidth = scanner.nextFloat();
+
+            double totalAreaOfWindow = (windowHeight * windowWidth);
+
+            System.out.println("number coats you want to apply ");
+            numberOfCoats = scanner.nextInt();
+
+            switch(numberOfCoats){
+                case 1:
+                    System.out.println("not enough");
+                    break;
+                case 2:
+                    System.out.println("Thats Good");
+                    break;
+                case 3:
+                    System.out.println("If you like");
+                    break;
+                default:
+                    System.out.println("Go back and check again");
+                    System.exit(0);
+            }
+
+            double areaOfEverything = ((totalAreaOfWalls + totalAreaOfCeiling) - (totalAreaOfDoor + totalAreaOfWindow));
+
+            System.out.println(areaOfEverything);
+        }
+
+
 
 
 
