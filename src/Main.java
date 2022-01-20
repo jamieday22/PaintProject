@@ -16,7 +16,7 @@ public class Main {
         float windowWidth;
         int numberOfCoats =0;
         float costOfPaintPerLitre;
-        String tooManyCoats = (numberOfCoats<3) ? "Too many coats":"Thats Good";
+        String thatDoesntSeemRight = (numberOfCoats >= 3) ? "Thats Good" : "Too many coats";
 
         float squareFeetPerLitre = 20;
 
@@ -36,53 +36,67 @@ public class Main {
 
             double totalAreaOfWalls = (roomWidthWall1 * roomHeightWall1);
 
-            System.out.println("The Width of the ceiling ");
-            ceilingWidth = scanner.nextFloat();
+            System.out.println("do you want to piant the ceiling Y/y or N/n");
+            String response = scanner.next();
 
-            System.out.println("The height of the ceiling ");
-            ceilingHeight = scanner.nextFloat();
 
-            double totalAreaOfCeiling = (ceilingHeight * ceilingWidth);
 
-            System.out.println("The height of the door ");
-            doorHeight = scanner.nextFloat();
+            if (response.equals("n") || response.equals("N")) {
+                System.out.println("ok please carry on");
 
-            System.out.println("The Width of the door ");
-            doorWidth = scanner.nextFloat();
+            } else {};
 
-            double totalAreaOfDoor = (doorHeight * doorWidth);
+                System.out.println("The width of the ceiling");
+                ceilingWidth = scanner.nextFloat();
 
-            System.out.println("The height of the window ");
-            windowHeight = scanner.nextFloat();
+                System.out.println("The height of the ceiling ");
+                ceilingHeight = scanner.nextFloat();
 
-            System.out.println("The Width of the window ");
-            windowWidth = scanner.nextFloat();
 
-            double totalAreaOfWindow = (windowHeight * windowWidth);
+                double totalAreaOfCeiling = (ceilingHeight * ceilingWidth);
 
-            System.out.println("number coats you want to apply ");
-            numberOfCoats = scanner.nextInt();
+                System.out.println("The height of the door ");
+                doorHeight = scanner.nextFloat();
 
-            switch(numberOfCoats){
-                case 1:
-                    System.out.println("not enough");
-                    break;
-                case 2:
-                    System.out.println("Thats Good");
-                    break;
-                case 3:
-                    System.out.println("If you like");
-                    break;
-                default:
-                    System.out.println("Go back and check again");
-                    System.exit(0);
-            }
+                System.out.println("The Width of the door ");
+                doorWidth = scanner.nextFloat();
 
-            double areaOfEverything = ((totalAreaOfWalls + totalAreaOfCeiling) - (totalAreaOfDoor + totalAreaOfWindow));
+                double totalAreaOfDoor = (doorHeight * doorWidth);
 
-            System.out.println(areaOfEverything);
+                System.out.println("The height of the window ");
+                windowHeight = scanner.nextFloat();
+
+                System.out.println("The Width of the window ");
+                windowWidth = scanner.nextFloat();
+
+                double totalAreaOfWindow = (windowHeight * windowWidth);
+
+                System.out.println("number coats you want to apply ");
+                numberOfCoats = scanner.nextInt();
+
+                switch (numberOfCoats) {
+                    case 1:
+                        System.out.println("not enough");
+                        break;
+                    case 2:
+                        System.out.println("Thats Good");
+                        break;
+                    case 3:
+                        System.out.println("If you like");
+                        break;
+                    default:
+                        System.out.println("Go back and check again");
+                        System.exit(0);
+                }
+
+                System.out.println("The cost per litre ");
+                costOfPaintPerLitre = scanner.nextFloat();
+
+                double areaOfEverything = ((totalAreaOfWalls + totalAreaOfCeiling) - (totalAreaOfDoor + totalAreaOfWindow));
+                double result = ((totalAreaOfWalls * numberOfCoats) / squareFeetPerLitre);
+                System.out.println("The price will be " + Math.round(result * costOfPaintPerLitre) + " pounds");
+
         }
-
 
 
 
