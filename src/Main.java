@@ -17,7 +17,7 @@ public class Main {
         int numberOfCoats =0;
         float costOfPaintPerLitre;
         String thatDoesntSeemRight = (numberOfCoats >= 3) ? "Thats Good" : "Too many coats";
-
+        double totalAreaOfCeiling = 0;
         float squareFeetPerLitre = 20;
 
 
@@ -36,15 +36,15 @@ public class Main {
 
             double totalAreaOfWalls = (roomWidthWall1 * roomHeightWall1);
 
-            System.out.println("do you want to piant the ceiling Y/y or N/n");
+            System.out.println("do you want to paint the ceiling Y/y or N/n");
             String response = scanner.next();
-
 
 
             if (response.equals("n") || response.equals("N")) {
                 System.out.println("ok please carry on");
 
-            } else {};
+            } else if (response.equals("y") || response.equals("Y")) {
+                System.out.println("ok please carry on");
 
                 System.out.println("The width of the ceiling");
                 ceilingWidth = scanner.nextFloat();
@@ -52,8 +52,9 @@ public class Main {
                 System.out.println("The height of the ceiling ");
                 ceilingHeight = scanner.nextFloat();
 
+                totalAreaOfCeiling = (ceilingHeight * ceilingWidth);
+            }
 
-                double totalAreaOfCeiling = (ceilingHeight * ceilingWidth);
 
                 System.out.println("The height of the door ");
                 doorHeight = scanner.nextFloat();
@@ -96,9 +97,9 @@ public class Main {
                 double result = ((totalAreaOfWalls * numberOfCoats) / squareFeetPerLitre);
                 System.out.println("The price will be " + Math.round(result * costOfPaintPerLitre) + " pounds");
 
+
+
         }
-
-
 
 
     }
