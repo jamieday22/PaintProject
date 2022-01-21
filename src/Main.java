@@ -12,8 +12,6 @@ public class Main {
 
         };
 
-        int dave = 2;
-
         return colourArray;
     }
 
