@@ -1,8 +1,22 @@
-import java.net.StandardSocketOptions;
 import java.util.Scanner;
 
 
 public class Main {
+    public static String [] paintColour(){
+
+
+        String[] colourArray = {"Red","Blue","Green","Yellow","Black","Purple"};
+        for (String i : colourArray) {
+
+            System.out.println(i);
+
+        };
+
+        int dave = 2;
+
+        return colourArray;
+    }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -24,25 +38,30 @@ public class Main {
             String thatDoesntSeemRight = (numberOfCoats >= 3) ? "Thats Good" : "Too many coats";
             double totalAreaOfCeiling = 0;
             float squareFeetPerLitre = 20;
-            float paintColor[];
 
 
-           // String[] colourArray = {"Red","Blue","Green","Yellow"};
-          //  for (String i : colourArray) {
+            paintColour();
 
-          //      System.out.println(i);
-          //  }
-
-            //allow user  input;
+/*
             System.out.println("What colour of paint do you want?");
             String colour = scanner.nextLine();
 
-            String colourArray []  = new String(colour)];
+            if (colour.matches (colourArray)){
+                System.out.println("Thats perfect");
 
-            System.out.println("Enter the " + colour + " ??.");
+            }
+
+            else if (false){
+                    System.out.println("We dont have that sorry ");
+                };
 
 
+            String colourUsed  = new String(colour);
 
+            System.out.println("Your color will be " + colourUsed);
+
+            System.out.println();
+*/
             System.out.println("The Height of the wall ");
             roomHeightWall1 = scanner.nextFloat();
 
