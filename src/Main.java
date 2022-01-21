@@ -20,8 +20,8 @@ public class Main {
     public static double totalAreaOfWalls(){
         Scanner scanner = new Scanner(System.in);
 
-        float roomHeightWall1 =0 ;
-        float roomWidthWall1 =0 ;
+        float roomHeightWall1  ;
+        float roomWidthWall1  ;
 
         System.out.println("The Height of the wall ");
         roomHeightWall1 = scanner.nextFloat();
@@ -66,11 +66,10 @@ public class Main {
         return totalArea;
     }
 
-
     public static float totalAreaOfDoor(){
         Scanner scanner = new Scanner(System.in);
-        float doorHeight=0;
-        float doorWidth=0;
+        float doorHeight;
+        float doorWidth;
         System.out.println("The height of the door ");
         doorHeight = scanner.nextFloat();
 
@@ -83,8 +82,8 @@ public class Main {
 
     public static float totalAreaOfwindow(){
         Scanner scanner = new Scanner(System.in);
-        float windowHeight=0;
-        float windowWidth=0;
+        float windowHeight;
+        float windowWidth;
         System.out.println("The height of the window ");
         windowHeight = scanner.nextFloat();
 
@@ -97,18 +96,19 @@ public class Main {
 
     public static float costOfPaintPerLitre(){
         Scanner scanner = new Scanner(System.in);
-        float costOfPaintPerLitre=0;
+        float costOfPaintPerLitre;
 
         System.out.println("The cost per litre ");
         costOfPaintPerLitre = scanner.nextFloat();
 
-        return 0;
+        return costOfPaintPerLitre;
+
     }
 
     public static float totalNumberOfCoats() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("number coats you want to apply ");
-        int numberOfCoats = 0;
+        int numberOfCoats =2;
         String thatDoesntSeemRight = (numberOfCoats >= 3) ? "Thats Good" : "Too many coats";
         numberOfCoats = scanner.nextInt();
 
@@ -124,26 +124,56 @@ public class Main {
                 break;
             default:
                 System.out.println("Go back and check again");
-                System.exit(0);
+
 
         }
         return numberOfCoats;
     }
 
-    public static void main(String[] args) {
+    public static double totalCalculation(){
 
         Scanner scanner = new Scanner(System.in);
-        boolean quoteAgain = true;
-        do {
 
-            float squareFeetPerLitre = 20;
+        double squareFeetPerLitre = 20;
+        double calculation1 = totalAreaOfWalls()+totalAreaOfCeilings();
+        double calculation2 = totalAreaOfDoor()-totalAreaOfwindow();
+        double calculation3 = calculation1-calculation2;
+        double calculation4 = calculation3/squareFeetPerLitre;
+        double calculation5 = calculation4*totalNumberOfCoats();
+        double calculation6 = calculation5*costOfPaintPerLitre();
+
+        System.out.println(calculation6);
+
+        return calculation6;
+    }
+
+    public static void main(String[] args) {
+
+       // boolean quoteAgain = true;
+     //   do {
+
+
             //float randomNumberGenerator = (float)(Math.random() * 20);
 
-            paintColour();
+        double calculation1;
+        double calculation2;
+        double calculation3;
+        double calculation4;
+        double calculation5;
+        double calculation6;
+
+          //  paintColour();
             totalAreaOfWalls();
-            totalAreaOfCeilings();
-            totalAreaOfDoor();
-            totalAreaOfwindow();
+        //totalAreaOfCeilings();
+          //  totalAreaOfDoor();
+           // totalAreaOfwindow();
+          //  totalNumberOfCoats();
+           // costOfPaintPerLitre();
+        totalCalculation();
+
+
+
+
 /*
             System.out.println("What colour of paint do you want?");
             String colour = scanner.nextLine();
@@ -168,7 +198,7 @@ public class Main {
 
 */
         }
-        while (quoteAgain = false);
+      /*  while (quoteAgain = false);
 
         System.out.println("do you want another quote y/Y n/N");
         String response = scanner.next();
@@ -182,9 +212,9 @@ public class Main {
                     quoteAgain = true;
                     System.out.println("ok have a nice day");
                 }
-
+       System.out.println(totalAreaOfWalls()+totalAreaOfCeilings()-totalAreaOfwindow()-totalAreaOfDoor()/20);
+*/
             }
-        }
 
 
 
